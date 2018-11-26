@@ -1,0 +1,63 @@
+/* pages/components/jiance/jiance.wxss */
+@import "./../../../app.wxss";
+.report-result-danger{
+  margin-bottom: 20rpx;
+  padding-top: 20rpx;
+}
+.part-title{
+  font-weight: bold;
+}
+.danger-title{
+  margin-bottom: 10rpx;
+}
+.danger-box{
+  font-size: 0;
+  margin-bottom: 29rpx;
+  position: relative;
+}
+.danger-box .pro-text{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding-right: 200rpx;
+}
+.pro-tishi{
+  position: absolute;
+  right: 0;top: 0;
+  line-height: 40rpx;
+  font-size: 28rpx;
+}
+.pro-tishi.pro-purple{
+  color: #FF1BA4;
+}
+.pro-tishi.pro-danger{
+  color: #FF0008;
+}
+.pro-tishi.pro-danger text{
+  display: inline-block;
+  width: 29rpx;height: 29rpx;
+  background: url('http://phpo9mptf.bkt.clouddn.com/change.png') no-repeat center;
+  background-size: cover;
+  margin-right: 10rpx;
+}
+.danger-suggestion text{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: 6rpx;
+  width: 29rpx;
+  height: 29rpx;
+  background: url('http://phpo9mptf.bkt.clouddn.com/change.png') no-repeat center;
+  background-size: cover;
+  margin-right: 8rpx;
+}
+.danger-image{
+  padding-top: 10rpx;
+}
+.danger-box image{
+  width: 204rpx;
+  height: 177rpx;
+  margin-right: 20rpx;
+}
+.danger-box image:nth-child(3n){
+  margin-right: 0;
+}

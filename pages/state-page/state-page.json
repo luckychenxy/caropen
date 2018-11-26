@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "jie-che": "./../components/jieche/jieche",
+    "shi-gong": "./../components/shigong/shigong",
+    "jian-ce":"./../components/jiance/jiance",
+    "zhi-jian": "./../components/zhijian/zhijian"
+  }
+}

@@ -1,0 +1,26 @@
+<!--pages/components/jiance/jiance.wxml-->
+<view>
+  <view class='gpContainer'>
+    <view class='part fault'>
+      <view class='part-title'>故障描述<text>（{{description.count}}）</text></view>
+      <view class='part-ul'>
+          <view class='part-li' wx:for="{{description.data}}" wx:key="item.info">
+            {{index+1}}、{{item.info}}
+          </view>
+        </view>
+    </view>
+    <view class='part'>
+      <view class='part-title '>检测出{{problemLen}}项问题，其中<text>{{ait_check.length}}</text>项严重问题</view>
+      <view class='report-result-danger'>
+        <view class='danger-box' wx:for="{{ait_check}}" wx:key="item">
+          <view class='danger pro-text'>{{index+1}}、{{item}}；</view>
+          <view class='pro-tishi pro-danger'><text></text>需更换</view>
+        </view>
+        <view class='danger-box' wx:for="{{check}}" wx:key="item.title">
+          <view class='pro-text'>{{index+ait_check.length+1}}、{{item.title}}；</view>
+          <view class='pro-tishi {{item.is_normal!="正常" && "pro-purple"}}'>{{item.is_normal=="正常"?"":item.is_normal}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "维修记录",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+}

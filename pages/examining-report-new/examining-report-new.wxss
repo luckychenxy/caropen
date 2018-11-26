@@ -1,0 +1,126 @@
+/* pages/examining-report-new/examining-report-new.wxss */
+page{
+  padding-bottom: 0;
+}
+.examining-container{
+  padding: 4rpx;
+  background: #4A90E2;
+}
+.trigon-l-t,.trigon-r-t{
+  border-color: transparent #4A90E2;
+}
+.trigon-l-b,.trigon-r-b{
+  border-color: #4A90E2 transparent;
+}
+.report-car-info{
+  margin-bottom: 34rpx;
+}
+.report-car-item{
+  line-height: 29rpx;
+  margin-bottom: 19rpx;
+}
+.report-result-title{
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+.report-result-title .h1{
+  font-size: 30rpx;
+  letter-spacing: 1.4rpx;
+  font-weight: bold;
+  margin-bottom: 6rpx;
+}
+.report-result-title .h6{
+  font-size: 24rpx;
+  letter-spacing: 1.12rpx;
+}
+.report-result-danger{
+  margin-bottom: 20rpx;
+}
+.danger-title{
+  margin-bottom: 10rpx;
+}
+.danger-box{
+  font-size: 0;
+  margin-bottom: 10rpx;
+  position: relative;
+}
+.danger-box .danger{
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 40rpx;
+  padding-right: 200rpx;
+}
+.ait .danger-box .danger{
+  padding-right: 0;
+}
+.danger-suggestion{
+  position: absolute;
+  right: 0;top: 0;
+  line-height: 40rpx;
+  color: #FF0008;
+  font-size: 28rpx;
+}
+.danger-suggestion text{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: 6rpx;
+  width: 29rpx;
+  height: 29rpx;
+  background: url('http://phpo9mptf.bkt.clouddn.com/change.png') no-repeat center;
+  background-size: cover;
+  margin-right: 8rpx;
+}
+.danger-image{
+  padding-top: 10rpx;
+}
+.examining-report-box image{
+  width: 204rpx;
+  height: 177rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+.danger-box image:nth-child(3n){
+  margin-right: 0;
+}
+.other-cut{
+  line-height: 81.5rpx;
+  border-top: 1rpx solid #C2C2C2;
+  border-bottom: 1rpx solid #C2C2C2;
+  position: relative;
+}
+.other-cut-icon{
+  position: absolute;
+  right: 4rpx;
+  top: 0;bottom: 0;
+  margin: auto;
+  width: 43rpx;height: 43rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/zhankai.png');
+}
+.other-cut-icon.active{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/shouqi.png');
+}
+.other-list{
+  padding: 10rpx 0;
+}
+.other-list.active{
+  display: none;
+}
+.other-item{
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+  position: relative;
+}
+.other-item-state{
+  position: absolute;
+  right: 0;top: 0;
+  line-height: 40rpx;
+}
+.report-result{
+  margin-bottom: 20rpx;
+}
+
+

@@ -1,0 +1,76 @@
+<!--pages/state-page/state-page.wxml-->
+
+<view>
+  <view class="header {{info.headerState}}">
+    <view class='header-info'>
+      <view class='header-title'>{{info.title}}</view>
+      <view class='header-car'>
+        <view class='header-car-icon'><image src='{{info.imgUrl}}'  binderror="errorFunction"></image></view>
+        <view class='header-car-info'>
+          <view class='header-car-pai'>{{info.car_number}}</view>
+          <view class='header-car-brand'>{{info.car}}</view>
+        </view>
+      </view>
+      <view class='header-time'>
+        预计{{info.time}}
+      </view>
+    </view>
+    <view class='header-progress'>
+      <view class='progress-item {{typeNum>=1?"active":""}}'>
+        <view class='progress-icon'></view>
+        <view class='progress-text'>接车</view>
+      </view>
+      <view class='progress-item {{typeNum>=2?"active":""}}'>
+        <view class='progress-icon'></view>
+        <view class='progress-text'>检测</view>
+      </view>
+      <view class='progress-item {{typeNum>=3?"active":""}}'>
+        <view class='progress-icon'></view>
+        <view class='progress-text'>施工</view>
+      </view>
+      <view class='progress-item {{typeNum>=4?"active":""}}'>
+        <view class='progress-icon'></view>
+        <view class='progress-text'>质检</view>
+      </view>
+      <view class='progress-item {{typeNum>=6?"active":""}}'>
+        <view class='progress-icon'></view>
+        <view class='progress-text'>评价</view>
+      </view>
+    </view>
+  </view>
+  <!-- 组件引用 -->
+  <jie-che wx-if="{{stateCode=='已进厂'}}" typeCode="{{code}}"></jie-che>
+  <shi-gong wx-if="{{stateCode=='施工中'}}" typeCode="{{code}}"></shi-gong>
+  <jian-ce wx-if="{{stateCode=='已检测'}}" typeCode="{{code}}"></jian-ce>
+  <zhi-jian wx-if="{{typeNum>=4}}" typeStr="{{stateCode}}" typeCode="{{code}}" bindundateData="updateData"></zhi-jian>
+  <!-- 组件结束 -->
+  <view class='footer'>
+    <view class='router' wx:if="{{typeNum>=4}}">
+      <navigator url='../orderDetails/orderDetails?code={{code}}'>
+        <image src='../../img/jc_info.png'></image>
+        <text>维修结果</text>
+        <image src='../../img/qualified.png' class='qualified'/>
+        <image src='../../img/href.png'></image>
+      </navigator>
+    </view>
+    <view class='router' wx:if="{{typeNum>=2}}">
+      <navigator url='../examining-report-new/examining-report-new'>
+        <image src='../../img/jc_info.png'></image>
+        <text>车辆检测报告（检测）</text>
+        <image src='../../img/href.png'></image>
+      </navigator>
+    </view>
+    <view class='router' wx:if="{{typeNum>1}}">
+      <navigator url='../components/jieche/jieche'>
+        <image src='../../img/bg_info.png'></image>
+        <text>接车信息</text>
+        <image src='../../img/href.png'></image>
+      </navigator>
+    </view>
+    <view class='part'>
+      <view class='personal-info'>工单号：{{info.code}}</view>
+      <view class='personal-info'>开单时间：{{info.createTime}}</view>
+      <view class='personal-info'>维修门店：{{info.company}}</view>
+    </view>
+  </view>
+</view>

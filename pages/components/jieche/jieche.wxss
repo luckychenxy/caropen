@@ -1,0 +1,85 @@
+/* pages/pickCar/pickCar.wxss */
+@import "./../../../app.wxss";
+.part-list{
+  padding-top: 13rpx;
+}
+.part-item{
+  font-size: 24rpx;
+  color: #4A4A4A;
+  letter-spacing: 1.12rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.part-item icon{
+  position: absolute;
+  right: 0;
+  top: 4rpx;
+}
+.part-note{
+  font-size: 24rpx;
+  color: #858488;
+  letter-spacing: 1.12rpx;
+}
+.part-show-list{
+  padding: 12rpx 0;
+}
+.part-show-title{
+  font-size: 24rpx;
+  color: #4A4A4A;
+  letter-spacing: 1.12rpx;
+}
+.part-show-title text{
+  color:#EC001D;
+}
+.part-show-item{
+  position: relative;
+}
+.show-state{
+  position: absolute;
+  right: 0;top: 4rpx;
+  width: 28rpx;height: 16rpx;
+}
+.show-label{
+  margin-bottom: 23rpx;
+}
+.show-label text{
+  display: inline-block;
+  font-size: 24rpx;
+  letter-spacing: 1.12rpx;
+  padding: 3rpx 13rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  border-radius: 20rpx;
+}
+.show-label text:first-child{
+  background: rgba(98,172,13,.2);
+  color: #62AC0D;
+}
+.show-label text:nth-child(2){
+  background: rgba(74,144,226,.2);
+  color: #4A90E2;
+}
+.show-label text{
+  background:  rgba(245,166,35,.2);
+  color:  #F5A623; 
+}
+.part-show-box{
+  margin-bottom: 40rpx;
+  transition: all .3s;
+  height: auto;
+  overflow: hidden;
+}
+.part-show-box.active{
+  height: 0;
+}
+.part-show-picBox{
+  font-size: 0;
+}
+.part-show-picBox image{
+  width: 204rpx;
+  margin-right: 27rpx;
+  height: 177rpx;
+}
+.part-show-picBox image:nth-child(3n){
+  margin-right: 0;
+}

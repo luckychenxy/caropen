@@ -1,0 +1,96 @@
+<!--pages/examining-report-new/examining-report-new.wxml-->
+<view class='examining-container' wx:if="{{hidden}}">
+  <view class='examining-report'>
+    <view class='trigon trigon-l-t'></view>
+    <view class='trigon trigon-r-t'></view>
+    <view class='trigon trigon-l-b'></view>
+    <view class='trigon trigon-r-b'></view>
+    <view class='examining-report-box'>
+      <view class='report-head'>
+        <view class='report-head-h1'>车辆检测报告</view>
+        <view class='orderNum'>该报告由{{companyInfo.company}}修理厂提供</view>
+        <view class='orderNum'>报告编号：{{companyInfo.ordercode}}</view>
+      </view>
+      <view class='report-car-info'>
+        <view class='report-car-item'>车牌号：{{carInfo.car_number}}</view>
+        <view class='report-car-item'>VIN码：{{carInfo.VIN}}</view>
+        <view class='report-car-item'>车辆品牌/车型：{{carInfo.car_brand}}/{{carInfo.car_type}}</view>
+        <view class='report-car-item'>年款：{{carInfo.cars_spec}}</view>
+        <view class='report-car-item'>里程：{{carInfo.repair_mileage}}KM</view>
+      </view>
+      <view class='report-result ait'>
+        <view class='report-result-title'>
+          <view class='h1'>智能设备检测结果</view>
+          <view class='h6'>本次共检测{{aitReport.abnormal_sum+aitReport.normal_sum}}项，{{aitReport.abnormal_sum}}项需更换</view>
+        </view>
+        <view class='report-result-danger' wx:for="{{aitReport.abnormal_data}}" wx:key="item">
+          <view class='danger-title'>{{item.name}}部分存在{{item.data.length}}个问题：</view>
+          <view class='danger-box' wx:for="{{item.data}}" wx:for-item="name" wx:for-index="ind" wx:key="name">
+            <view class='danger'>{{ind+1}}、{{name}}</view>
+          </view>
+        </view>
+        <view class='report-result-other'>
+          <view class='other-cut'>
+            <text>{{aitReport.normal_sum}}项检测正常</text>
+            <view class='other-cut-icon {{aitState?"":"active"}}' data-state='ait' bindtap='toggle'></view>
+          </view>
+          <view class='other-list {{aitState?"":"active"}}'>
+            <view class='other-item-box' wx:for="{{aitReport.normal_data}}" wx:key="item">
+              <view class='danger-title'>{{item.name}}部分存在{{item.data.length}}个问题：</view>
+              <view class='other-item' wx:for="{{item.data}}" wx:for-item="name" wx:for-index="ind" wx:key="name">
+                <text>{{ind+1}}、{{name}}</text>
+                <text class='other-item-state'>正常</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='report-result'>
+        <view class='report-result-title'>
+          <view class='h1'>全车检测结果</view>
+          <view class='h6'>本次共检测{{humanReport.abnormal_data.length+humanReport.normal_data.length}}项，{{humanReport.abnormal_data.length}}项需更换</view>
+        </view>
+        <view class='report-result-danger'>
+          <view class='danger-box' wx:for="{{humanReport.abnormal_data}}" wx:key="item">
+            <view class='danger'>{{index+1}}、{{item.title}}；</view>
+            <view class='danger-suggestion'><text></text>{{item.is_normal}}</view>
+            <view class='danger-image' wx:show="{{item.img.length>0}}">
+              <image src='{{item}}' wx:for="{{item.img}}" wx:key="item" bindtap='lookPic' data-src='{{item}}'></image>
+            </view>
+          </view>
+        </view>
+        <view class='report-result-other'>
+          <view class='other-cut'>
+            <text>{{humanReport.normal_data.length}}项检测正常</text>
+            <view class='other-cut-icon {{checkState?"":"active"}}' data-state='check' bindtap='toggle'></view>
+          </view>
+          <view class='other-list {{checkState?"":"active"}}'>
+            <view class='other-item' wx:for="{{humanReport.normal_data}}" wx:key="item">
+              <text>{{index+1}}、{{item.title}}；</text>
+              <text class='other-item-state'>{{item.is_normal}}</text>
+              <view class='danger-image' wx:show="{{item.img.length>0}}">
+                <image src='http://inflexion.icarzoo.com/e/100/app/image/{{item}}' wx:for="{{item.img}}" wx:key="item" bindtap='lookPic' data-src='{{item}}'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='report-company'>
+        <view class='report-company-item'>名称：{{companyInfo.company}}</view>
+        <view class='report-company-item'>联系电话：{{companyInfo.phone}}</view>
+        <view class='report-company-item'>AIT序列号：{{companyInfo.serial_number}}</view>
+        <view class='report-company-item'>检测时间：{{companyInfo.time}}</view>
+        <view class='report-company-item'>
+          <text>检测地址：</text>
+          <view>{{companyInfo.address}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 没有维修记录 -->
+<view wx:if='{{noData}}' class='noData'>
+  <image src='http://phswzedy1.bkt.clouddn.com/maintrecord.png' class='unmaint'></image>
+  <view class='maintnull'>您的爱车尚未进行检测</view>
+  <view class='thanks'>感谢使用用车助手</view>
+</view>

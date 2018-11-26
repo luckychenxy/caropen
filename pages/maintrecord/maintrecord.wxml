@@ -1,0 +1,28 @@
+<!--pages/maintrecord/maintrecord.wxml-->
+<view class='container'>
+    <view class='maintbox' hidden='{{hidden}}' wx:for="{{maintrecord}}" wx:key="item" data-code="{{item.ordercode}}" bindtap="detail">
+      <view class='maintheader'>
+          <image src='../../img/factory.png' class='factoryImage' wx:if="{{item.avatar.length==0}}"></image>
+          <image src='{{item.avatar}}' class='factoryImage' wx:else binderror='errorFunction' data-index='{{index}}'></image>
+      <view class="lookFactory text-left  ">{{item.store_name}}</view>
+      <view class='infactory' wx:if="{{item.type=='已进厂'}}">已进厂</view>
+      <view class='inmoitor' wx:elif="{{item.type=='已检测'}}">已检测</view>
+      <view class='inwork' wx:elif="{{item.type=='施工中'}}">施工中</view>
+      <view class='incomplete' wx:elif="{{item.type=='已完工'}}">已完工</view>
+      <view class='inmoney' wx:elif="{{item.type=='已付款'}}">已付款</view>
+      <view class='insuccess'wx:else>已完成</view>
+      </view>
+      <view class='maintfooter'>
+        <view>维修类型：{{item.repairtype}}</view>
+        <view>服务车辆：{{item.car_number}}{{item_brand}}{{item.car_type}}</view>
+        <view>开单时间：{{item.create_time}}</view>
+      <view>总价：<text class='danger'>¥{{item.price}} </text>    <view class='evaluate' wx:if="{{item.type=='已付款'}}">评价</view></view>
+      </view>
+    </view>
+    <!-- 没有维修记录 -->
+    <view hidden='{{!hidden}}'>
+      <image src='http://phswzedy1.bkt.clouddn.com/maintrecord.png' class='unmaint'></image>
+      <view class='maintnull'>您暂无维修记录</view>
+      <view class='thanks'>感谢使用用车助手</view>
+     </view>
+</view>

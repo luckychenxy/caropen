@@ -1,0 +1,80 @@
+<!--pages/examining-report-old/examining-report-old.wxml-->
+<view class='examining-container' wx:if="{{hidden}}">
+  <view class='examining-report'>
+    <view class='trigon trigon-l-t'></view>
+    <view class='trigon trigon-r-t'></view>
+    <view class='trigon trigon-l-b'></view>
+    <view class='trigon trigon-r-b'></view>
+    <view class='examining-report-box'>
+      <view class='report-head'>
+        <view class='report-head-h1'>车辆检测报告</view>
+        <view class='orderNum'>该报告由{{companyInfo.company}}修理厂提供</view>
+        <view class='orderNum'>报告编号：{{companyInfo.ordercode}}</view>
+      </view>
+      <view class='report-car-info'>
+        <view class='report-car-item'>车牌号：{{carInfo.car_number}}</view>
+        <view class='report-car-item'>车身颜色：{{carInfo.car_body_color}}</view>
+        <view class='report-car-item'>里程：{{carInfo.repair_mileage}}KM</view>
+        <view class='report-car-item'>车龄：{{carInfo.buycar_date}}年</view>
+      </view>
+      <view class='report-project'>
+        <view class='report-project-h1'>本次维修项目</view>
+        <view class='report-project-box'>
+          <view class='report-project-title'>维修项目</view>
+          <view class='report-project-list'>
+            <view class='report-project-item' wx:for="{{project.subject.data}}" wx:key="item.subject_name">{{item.subject_name}}</view>
+          </view>
+        </view>
+        <view class='report-project-box'>
+          <view class='report-project-title'>维修配件</view>
+          <view class='report-project-list'>
+            <view class='report-project-item' wx:for="{{project.parts.data}}" wx:key="item.parts_name">{{item.parts_name}}</view>
+          </view>
+        </view>
+        <view class='report-project-box'>
+          <view class='report-project-title'>其他项目</view>
+          <view class='report-project-list'>
+            <view class='report-project-item' wx:for="{{item.other_total.data}}" wx:key="item.parts_name">{{item.other_total_name}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='report-problem'>
+        <view class='report-project-h1'>本次共修复{{unsolved.length+resolved.length}}项，还有{{unsolved.length}}项未解决</view>
+        <view class='report-problem-yes'>
+          <view class='report-problem-item' wx:for="{{resolved}}" wx:key="{{item.name}}">
+            <view class='rp-text'>{{index+1}}、{{item.name}} <view class='rp-class'>{{item.type}}</view></view>
+            <view class='rp-state rp-success'>已解决</view>
+            <view class='rp-img' wx:if="{{item.img>0}}">
+              <image src='{{pic}}' wx:for="{{item.img}}" wx:for-item="pic" wx:key="pic" bindtap='lookPic' data-src='{{pic}}'></image>
+            </view>
+          </view>
+        </view>
+        <view class='report-problem-no'>
+          <view class='report-problem-item' wx:for="{{unsolved}}" wx:key="{{item.name}}">
+            <view class='rp-text'>{{index+1}}、{{item.name}} <view class='rp-class'>{{item.type}}</view></view>
+            <view class='rp-state rp-danger'>{{item.statue}}</view>
+            <view class='rp-img' wx:if="{{item.img>0}}">
+              <image src='{{pic}}' wx:for="{{item.img}}" wx:for-item="pic" wx:key="pic" bindtap='lookPic' data-src='{{pic}}'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='report-company'>
+        <view class='report-company-item'>名称：{{companyInfo.company}}</view>
+        <view class='report-company-item'>联系电话：{{companyInfo.phone}}</view>
+        <view class='report-company-item'>AIT序列号：{{companyInfo.serial_number}}</view>
+        <view class='report-company-item'>检测时间：{{companyInfo.time}}</view>
+        <view class='report-company-item'>
+          <text>检测地址：</text>
+          <view>{{companyInfo.address}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 没有维修记录 -->
+<view wx:if='{{noData}}' class='noData'>
+  <image src='http://phswzedy1.bkt.clouddn.com/maintrecord.png' class='unmaint'></image>
+  <view class='maintnull'>您的爱车尚未进行检测</view>
+  <view class='thanks'>感谢使用用车助手</view>
+</view>

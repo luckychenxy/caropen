@@ -1,0 +1,180 @@
+<!--pgimg/components/zhijian/zhijian.wxml-->
+<view class='gpContainer container'>
+  <!-- appraise 付款显示星星开始 -->
+  <view class='appraise' wx:if="{{fukuan}}">
+    <view class='appraiseCar'>评价可查看
+      <navigator url='../examining-report-old/examining-report-old'>
+        <text class='cartext'>《车辆健康报告》</text> 
+      </navigator>
+    </view>
+    <view class="comment1-description">
+      <view class="star-pos" style="display:flex;flex-direction:row;">
+        <view bindtap="changeColor1"><image src='../../../img/startGray.png' class='stars'/></view>
+        <view bindtap="changeColor2"><image src='../../../img/startGray.png' class='stars'/></view>
+        <view bindtap="changeColor3"><image src='../../../img/startGray.png' class='stars'/></view>
+        <view bindtap="changeColor4"><image src='../../../img/startGray.png' class='stars'/></view>
+        <view bindtap="changeColor5"><image src='../../../img/startGray.png' class='stars'/></view>
+      </view>
+    </view>
+  </view>
+  <!-- appraise 付款显示星星结束 -->
+  <!-- 评价开始 -->
+  <view class='appraise1' wx:if="{{pingjia}}">
+    <view class='appraiseCar'>点击查看
+      <navigator url='../examining-report-old/examining-report-old'>
+        <text class='cartext'>《车辆健康报告》</text> 
+      </navigator>
+    </view>
+    <!-- 用户头像 -->
+    <view class='lookevaluate'>
+      <!-- <image src='../../../img/factory.png' class='factoryImage'></image> -->
+      <image src='../../../img/factory.png' class='factoryImage' wx:if="{{avatar.length==0}}"></image>
+  <image src='{{avatar}}' class='factoryImage' wx:else binderror="errorFunction"></image>
+      <view class="lookFactory text-left  ">{{company}}</view>
+      <view class="comment3-description">
+        <view class="star-pos" style="display:flex;flex-direction:row;">
+          <view wx:for='{{flag-0}}' wx:key="item"><image src='../../../img/startyellow.png'              
+            class='comment3-stars'/></view> 
+          <view  wx:for='{{5-flag-0}}' wx:key="item"><image src='../../../img/startGray.png'   
+            class='comment3-stars'/></view>
+        </view>
+      </view>   
+      <navigator url='../lookevaluate/lookevaluate?code={{typeCode}}'>
+        <text class='lookEvBtn'>查看评价</text>
+      </navigator>
+     </view>
+  </view>
+  <!-- 评价结束 -->
+  <!-- moneyTatal开始 -->
+  <view class='moneyTatal'>
+    <view wx:if="{{typeStr=='已完工'}}">
+      <view class='text-bold text-right fsize16 mb8'>实付总额：
+        <text class='total'>¥{{allPrice}}</text>
+      </view>
+    </view>
+    <view wx:if="{{typeStr!='已完工'}}">
+      <view class='text-bold text-right fsize16 mb8'>实付总额：
+        <text class='total'>¥{{allPrice}}</text>
+      </view>
+      <view class='discounts text-right mb8'>优惠：-¥{{discounts}}</view>
+      <view class='amountatal text-right'>工单总额：¥{{allTotal}}</view>
+    </view>
+    <view class='clearfix clearBofore'>
+      <view class='left fsize15 text-bold'>
+        <image src='../../../img/sg_trigon.png' class='triangle'/> 维修项目
+      </view>
+      <view class='right fsize14'>合计：¥{{repairPro.price}}</view>
+    </view>
+    <!-- table开始 -->
+    <view class="table {{!showMore? 'hiddenmore' : 'showmore'}}">
+      <view wx:for="{{repairPro.data}}" wx:key="{{item}}"wx:for-index="idx" 
+        class="{{idx>1?'more-item  tr':'tr'}}">
+        <view class="td">{{item.subject_name}}</view>
+        <view class="td">*{{item.hour}}h</view>
+        <view class="td">¥{{item.total}}</view>
+      </view>
+      <!-- 维修项目结束  -->
+      <view class="clearfix clearBofore {{!showMore?'more-item':''}}">
+        <view class='left fsize15 text-bold'><image src='../../../img/sg_trigon.png' class='triangle'/>
+        维修配件</view>
+        <view class='right fsize14'>合计：¥{{repairPart.price}}</view>
+        <view class='table'>
+          <view class='tr' wx:for="{{repairPart.data}}" wx:key="item.parts_name">
+            <view class="td">{{item.parts_name}}</view>
+            <view class="td">*{{item.count}}h</view>
+            <view class="td">¥{{item.p_total}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- 维修配件结束  -->
+      <view class="clearfix clearBofore {{!showMore?'more-item':''}}">
+        <view class='left fsize15 text-bold'><image src='../../../img/sg_trigon.png' 
+        class='triangle'/> 其他项目</view>
+        <view class='right fsize14'>合计：¥{{otherPro.price}}</view>
+        <view class='table'>
+          <view class='tr' wx:for="{{otherPro.data}}" wx:key="item.parts_name">
+            <view class="td">{{item.parts_name}}</view>
+            <view class="td">*{{item.count}}h</view>
+            <view class="td">¥{{item.p_total}}</view>
+          </view>
+        </view>
+        <!-- 其他项目结束 -->
+      <!-- 收起 -->
+      </view>
+      <view wx:if="{{showMore}}" class='text-center showup' bindtap='listToggle'>
+        收起
+        <image src='../../../img/down.png' class='up'/>
+      </view>
+      <view wx:else class='text-center lookmore' bindtap='listToggle'>
+        查看更多
+        <image src='../../../img/down.png' class='down'/>
+      </view>
+    </view>
+    <!-- table结束 -->
+  </view>
+  <!--隐藏区域  黑色阴影-->
+<view class='maskLayer' wx:if="{{chooseSize}}" bindtap='hideModal' catchtouchmove="preventTouchMove"></view>
+<!-- 评价内容 -->
+  <view class='choose' wx:if="{{chooseSize}}" animation='{{animationData}}'   
+  catchtouchmove="preventTouchMove">
+    <view class='appraiseCar'>评价可查看<text class='cartext'>《车辆健康报告》</text></view>
+      <view class='factory'>北京圣诞节是的修理厂</view>
+      <!-- 星星开始 -->
+      <view class="comment2-description">
+        <view class="star-pos" style="display:flex;flex-direction:row;">
+          <view wx:for='{{flag-0}}' wx:key="item"><image src='../../../img/startyellow.png' class='stars'/></view>
+          <view  wx:for='{{5-flag-0}}' wx:key="item"><image src='../../../img/startGray.png' class='stars'/></view>
+        </view>
+      </view>
+      <!-- 星星结束 -->
+      <view class='factory' style='margin-top:0px;'>{{starttext}}</view>
+      <view class='factoryState'>选择标签</view>
+      <!-- 评价第一行提示 -->
+      <view class='appraiseText'>
+        <text class="{{label1?'labelcolor':''}}" bindtap='clicklabel1'>{{startLabel[0]}}</text>
+        <text class="{{label2?'labelcolor':''}}" bindtap='clicklabel2'>{{startLabel[1]}}</text>
+        <text  class="{{label3?'labelcolor':''}}" bindtap='clicklabel3'>{{startLabel[2]}}</text>
+      </view>
+      <!-- 评价第二行提示 -->
+      <view class='appraiseText'>
+        <text  class="{{label4?'labelcolor':''}}" bindtap='clicklabel4'>{{startLabel[3]}}</text>
+        <text  class="{{label5?'labelcolor':''}}" bindtap='clicklabel5'>{{startLabel[4]}}</text>
+      </view>
+      <!--文本域开始  -->
+      <view class="weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <textarea class="weui-textarea text-left"placeholder="你的评价能帮助其他伙伴，描述具体情况有助于商家优化服务" style="height: 6em;width:100%;" value="{{info}}"  fixed='fixed' bindblur='input'/>
+          </view>
+        </view>
+        <!-- 图片上传开始 -->
+        <view class="picture_list">
+          <view wx:for="{{upload_picture_list}}" class="picture_item" wx:key="{{index}}">
+            <image  src="{{item.path}}" mode="aspectFill"></image>
+            <view class="upload_progress" data-index="{{index}}" bindtap="previewImg"></view>
+            <text class='del' bindtap='deleteImg' data-src='{{image}}' style='display:{{isDel}}' data-index="{{index}}">×</text>
+          </view>
+        <view class='picture_item'>
+          <view class="photoUp" bindtap='uploadpic'>
+            <view>+</view>
+            <view>上传照片</view>
+          </view>
+        </view>
+      </view>
+      <!-- 图片上传结束 -->
+    </view>
+    <!-- 文本域结束 --> 
+    <!--发布按钮  -->
+    <view class="btnSf">
+      <button bindtap='uploadimage' disabled='{{disabled}}' >提交</button>
+    </view>
+  </view>
+  <!-- 评价阴影 -->
+  <view class='maskLayer' wx:if="{{appchooseSize}}" catchtouchmove="preventTouchMove"></view>
+  <!-- 评价成功弹窗 -->
+  <view class='success' wx:if="{{appchooseSize}}">
+    <image src='http://phswzedy1.bkt.clouddn.com/appraise.png'></image>
+    <view class='appsuccess'> 评价成功</view>
+    <view class='appYes' bindtap='hiddenappbtn'>确定</view>
+  </view>
+</view>

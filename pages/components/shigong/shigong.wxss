@@ -1,0 +1,70 @@
+/* pages/components/shigong/shigong.wxss */
+@import "./../../../app.wxss";
+.sg-price{
+  border-radius: 10rpx;
+  background: #fff;
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+}
+.sg-title{
+  line-height: 65rpx;
+  text-align: right;
+  font-size: 32rpx;
+  color: #4A4A4A;
+  letter-spacing: 1.49rpx;
+  font-weight: bold;
+}
+.sg-box{
+  border-top: 2rpx solid #E4E4E4;
+  font-size: 28rpx;
+  color: #858488;
+  letter-spacing: 1.31rpx;
+  line-height: 40rpx;
+  padding: 18rpx 0 8rpx 0;
+}
+.sg-type{
+  margin-bottom: 25rpx;
+}
+.sg-type image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: top;
+}
+.sg-type text{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.sg-type view{
+  float: right;
+}
+.sg-item{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.sg-item view:first-child{
+  flex:4;
+}
+.sg-item view:first-child text{
+  display: inline-block;
+  padding: 3.5rpx 8rpx;
+  font-size: 24rpx;
+  letter-spacing: 1.12rpx;
+  border-radius: 20rpx;
+  margin-left: 8rpx;
+}
+.sg-item .hong{
+  background: rgba(254,79,32,.2);
+  color: #FE4F20;
+}
+.sg-item .huang{
+  color:  #F5A623;
+  background: rgba(245,166,35,.2);
+}
+.sg-item view:nth-child(2){
+  flex:1;
+  text-align: right;
+}
+.sg-item view:nth-child(3){
+  flex:2;
+  text-align: right;
+}

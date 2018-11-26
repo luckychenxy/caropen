@@ -1,0 +1,83 @@
+<view class='container' >
+  <view class="xyy-banner">
+    <image src='http://phpo9mptf.bkt.clouddn.com/banner2.png'></image>
+    <view class="xyy-title1">{{slogan1}}</view>
+    <view class="xyy-title2">{{slogan2}}</view>
+  </view>
+  <view class="xyy-juan">
+    <image src='{{juanUrl}}'></image>
+    <image src='../../img/geted.png' class='xyy-got' wx-if="{{show4}}"></image>
+    <view class="xyy-juan-text" wx-if="{{show5}}">
+      <view class="xyy-juan-pic">
+        <image src='{{logoUrl}}'></image>
+      </view>
+      <view class="xyy-juan-name">{{juanName}}</view>
+      <view class="xyy-juan-date">有效期至：{{juanDate}}</view>
+      <!-- <view class="xyy-juan-address">地址：{{juanAddress}}</view> -->
+      <view class="xyy-juan-money {{more? 'more' : ''}}">{{juanMoney}}</view>
+      <view class="xyy-juan-tit">{{juanType}}</view>
+    </view>
+  </view>
+  <view class="xyy-footer">
+    <button class="get" bindtap='getJuan' disabled='{{show3}}'>{{buttons}}</button>
+    <view class="detail">
+      <view>说明：{{shuoming}}</view>
+      <view wx-if="{{show7}}">电话：{{tel}}</view>
+      <view wx-if="{{show8}}">地址：{{address}}</view>
+    </view>
+  </view>
+</view>
+<view class="xyy-mask" wx-if="{{show0}}"  >
+  <view class="xyy-bgMask" wx-if="{{show0}}" catchtap='close'></view>
+  <view class="xyy-popup"  wx-if="{{show1}}">
+      <view class="popup-header">
+        <view>为了不影响您的优惠兑换</view>
+        <view>请填写正确的姓名、手机号、车牌号</view>
+      </view>
+      <form bindsubmit='formsubmit'> 
+        <view class='xyy-input'>
+          <view class="left">姓名：</view>
+          <view class="right"><input type="text"  value="{{name}}"  bindinput='getName'></input></view>
+        </view>
+        <view class='xyy-input'>
+          <view class="left">手机号：</view>
+          <view  class="right"><input  value='{{phone}}' maxlength='11' bindinput='getPhone' type='number'></input></view>
+        </view>
+        <view class="xyy-input yzm">
+          <view class="left">验证码：</view>
+          <view  class="right"><input type="text" value="{{yzm}}" bindinput='getYzmValue' maxlength='5'></input></view>
+          <view class="xyy-yzm" bindtap='getYzm'>
+            <button disabled='{{disabled}}'>{{yzm_tit}}</button>
+          </view>
+        </view>
+        <view class='xyy-input'>
+          <view class="left">车牌：</view>
+          <view  class="right"><input type="text" value="{{chepai}}" bindinput='getChepai' maxlength='8'></input></view>
+        </view>
+        <view class="xyy-submit">
+          <button form-type="submit" disabled='{{yz1&&yz2 &&yz3&&yz4? false :true }}'>确定</button>
+        </view>
+      </form>
+  </view>
+  <view class="xyy-suc" wx-if="{{show2}}" catchtap='close' >
+    <view class="suc-pic">
+      <image src='../../img/suc.png'></image>
+    </view>
+    <view class="xyy-suc-header">恭喜您 领取成功!</view>
+    <view class="xyy-suc-text">
+      请您于{{juanDate}}之前，到{{juanName}}消费，消费时请提供您的手机号以便我们核对优惠信息，欢迎您的光临！
+    </view>
+    
+  </view>
+  <view class="xyy-suc guoqi" wx-if="{{show6}}" >
+    <view class="xyy-suc-header guoqi ">好可惜 领完了！</view>
+    <view class="xyy-suc-text guoqi ">敬请期待下次活动</view>
+    <view class="suc-pic guoqi">
+      <image src='../../img/lingwan.png'></image>
+    </view>
+    <view class="guoqi-button" bindtap='close1'>
+      <button>知道了</button>
+    </view>
+  </view>
+</view>
+

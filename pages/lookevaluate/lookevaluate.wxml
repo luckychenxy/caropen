@@ -1,0 +1,31 @@
+<!--pages/lookevaluate/lookevaluate.wxml-->
+<view class='container'>
+  <image src='../../img/factory.png' class='factoryHeader' wx:if="{{avatar.length==0}}"></image>
+  <image src='{{avatar}}' class='factoryHeader' wx:else binderror="errorFunction"></image>
+  <view class='factoryTitle'>{{factory}}</view>
+    <view class="comment2-description">
+    <view class="star-pos" style="display:flex;flex-direction:row;">
+      <view wx:for='{{flag-0}}'><image src='../../img/startyellow.png' class='comment3-stars'/></view>
+      <view  wx:for='{{5-flag-0}}'><image src='../../img/startGray.png' class='comment3-stars'/></view>
+    </view>
+  </view>
+  <view class='label mt96'>他的标签</view>
+  <view class='appraiseTextBox'>
+      <view class='appraiseText'>
+          <text wx:if="{{startLabel.length>0}}">{{startLabel[0]}}</text>
+          <text wx:if="{{startLabel.length>1}}">{{startLabel[1]}}</text>
+          <text wx:if="{{startLabel.length>2}}">{{startLabel[2]}}</text>
+        </view>
+      <view class='appraiseText'>
+        <text wx:if="{{startLabel.length>3}}">{{startLabel[3]}}</text>
+        <text wx:if="{{startLabel.length>4}}">{{startLabel[4]}}</text>
+        </view>
+    </view>    
+  <view class='label'>您的评价</view>
+  <view class='textbox'>
+      <view class='apptext'>{{content}}</view>
+    <view class='appImage'>
+        <image src='{{item}}' wx:for="{{image}}"></image>
+    </view>
+</view>
+</view>

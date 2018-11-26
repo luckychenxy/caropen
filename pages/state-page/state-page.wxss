@@ -1,0 +1,154 @@
+/* pages/state-page/state-page.wxss */
+.header{
+  padding: 0 3%;
+  font-size: 24rpx;
+  padding-top: 30rpx;
+  height: 323rpx;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 46rpx;
+}
+.header.jieche{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/jieche_head.png');
+}
+.header.jiance{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/jiance_head.png');
+}
+.header.shigong{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/shigong_head.png');
+}
+.header.zhijian{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/wangong_head.png');
+}
+.header.fukuan{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/fukuan_head.png');
+}
+.header.pingjia{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/wancheng_head.png');
+}
+.header-info{
+  color: #fff;
+  margin-bottom: 66.5rpx;
+}
+.header-time{
+  font-size: 30prx;
+  letter-spacing: 1.4rpx;
+  position: absolute;
+  right: 24rpx;
+  top: 50rpx;
+}
+.header-time text{
+  font-size: 40rpx;
+}
+.header-title{
+  font-size: 59rpx;
+  letter-spacing: 2.76rpx;
+  margin-bottom: 30rpx;
+}
+.header-car-info{
+  letter-spacing: 1.12rpx;
+  margin-left: 70rpx;
+}
+.header-progress{
+  background: #FFFFFF;
+  box-shadow: 0 0 30rpx 0 #EDEDED;
+  border-radius: 10rpx;
+  color: #9B9B9B;
+  letter-spacing: 1.12rpx;
+  height: 129rpx;
+  font-size: 0;
+  display: flex;
+  width: 100%;
+}
+.progress-item{
+  display: inline-block;
+  flex: 1;
+  font-size: 24rpx;
+  text-align: center;
+  position: relative;
+  padding-top: 35rpx;
+}
+.progress-item::before,.progress-item::after{
+  content: '';
+  position: absolute;
+  top: 50rpx;
+  width: 50%;
+  background: #D7D7D7;
+  height: 2rpx;
+}
+.progress-item:first-child::before{
+  display: none;
+}
+.progress-item:last-child::after{
+  display: none;
+}
+.progress-item::before{
+  left: 0;
+}
+.progress-item::after{
+  right: 0;
+}
+.progress-icon{
+  margin: 0 auto;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 100%;
+  position: relative;
+  z-index: 100;
+  margin-bottom: 9rpx;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.progress-item.active{
+  padding-top: 20rpx;
+  color: #6F85FF;
+}
+.progress-item.active::before,.progress-item.active::after{
+  background: #6F85FF;
+}
+.progress-item.active .progress-icon{
+  width: 60rpx;height: 60rpx;margin-bottom: 0
+}
+.progress-item:first-child .progress-icon{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/jieche.png')
+}
+.progress-item.active:first-child .progress-icon{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/jieche_y.png')
+}
+.progress-item:nth-child(2) .progress-icon{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/jiance.png')
+}
+.progress-item.active:nth-child(2) .progress-icon{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/jiance_y.png')
+}
+.progress-item:nth-child(3) .progress-icon{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/shigong.png')
+}
+.progress-item.active:nth-child(3) .progress-icon{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/shigong_y.png')
+}
+.progress-item:nth-child(4) .progress-icon{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/zhijian.png')
+}
+.progress-item.active:nth-child(4) .progress-icon{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/zhijian_y.png')
+}
+.progress-item:nth-child(5) .progress-icon{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/pingjia.png')
+}
+.progress-item.active:nth-child(5) .progress-icon{
+  background-image: url('http://phpo9mptf.bkt.clouddn.com/pingjia_y.png')
+}
+.footer{
+  padding: 0 20rpx;
+}
+.header-car-icon{
+  float: left;
+}
+.header-car-icon image{
+  width: 56rpx;
+  height: 56rpx;
+}

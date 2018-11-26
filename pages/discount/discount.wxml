@@ -1,0 +1,76 @@
+<view class="container">
+  <view class="banner" >
+    <image src='../../img/banner2.png'></image>
+  </view>
+  <view class="content">
+    <view class="xyy-juan-pic">
+        <image src='{{logoUrl}}'></image>
+      </view>
+      <view class="xyy-juan-name">{{juanName}}</view>
+    <view class="content-banner">
+      <image src="../../img/kuang.png"></image>
+    </view>
+    <view class="xyy-content1">{{slogan1}}</view>
+    <view class="xyy-content2">{{slogan2}}</view>
+    <view class="xyy-detail">{{content}}</view>
+    <view class="xyy-date">时间：{{footerStart}}至{{footerEnd}}</view>
+    <view class="xyy-phone" wx-if="{{show5}}">电话：{{footerTel}}</view>
+    <view class="xyy-address" wx-if="{{show6}}">地址：{{footerAdd}}</view>
+  </view>
+  <view class="xyy-mask" >
+    <view class="xyy-bgMask" wx-if="{{show0}}" catchtap='close'></view>
+    <view class="xyy-popup" >
+        <view class="popup-header">
+          <view>活动报名</view>
+        </view>
+        <form bindsubmit='formsubmit'> 
+          <view class='xyy-input'>
+            <view class="left">姓名：</view>
+            <view class="right"><input type="text"  value="{{name}}" bindinput='getName'></input></view>
+          </view>
+          <view class='xyy-input'>
+            <view class="left">电话：</view>
+            <view  class="right"><input type="number" value='{{phone}}' maxlength='11' bindinput='getPhone'></input></view>
+          </view>
+          <view class="xyy-input ">
+            <view class="left">验证码：</view>
+            <view  class="right"><input type="text" value="{{yzm}}" bindinput='getYzmValue' maxlength='5'></input></view>
+            <view class="xyy-yzm" bindtap='getYzm'>
+              <button disabled='{{disabled}}'>{{yzm_tit}}</button>
+            </view>
+          </view>
+          <view class='xyy-input'>
+            <view class="left">车牌：</view>
+            <view  class="right"><input type="text" value="{{chepai}}" bindinput='getChepai' maxlength='8'></input></view>
+          </view>
+          <view class="xyy-submit ">
+            <button form-type="submit"  disabled='{{yz1&&yz2&&yz3&&yz4 ? false :true }}'>{{buttons}}</button>
+          </view>
+        </form>
+    </view>
+    <view class="xyy-suc" wx-if="{{show2}}" catchtap='close'>
+      <view class="suc-pic">
+        <image src="../../img/suc.png"></image>
+      </view>
+      <view class="xyy-suc-header">恭喜您 报名成功!</view>
+      <view class="xyy-suc-text">快去分享给好友吧</view>
+    </view>
+    <view class="xyy-out" wx-if="{{show4}}" >
+      <view class="footer-pic">
+        <image src="../../img/guoqi.png"></image>
+      </view>
+      <view class="footer-tit1 guoqi">本活动已结束</view>
+      <view class="footer-tit2">敬请期待下次活动</view>
+    </view>
+  </view>
+  <view class="xyy-footer" wx-if="{{show3}}">
+    <view class="xyy-footer-popup">
+      <view class="footer-pic">
+        <image src="../../img/lingqu.png"></image>
+      </view>
+      <view class="footer-tit1">您已报名成功！</view>
+      <view class="footer-tit2">请参照活动时间到店消费</view>
+    </view>
+  </view>
+</view>
+

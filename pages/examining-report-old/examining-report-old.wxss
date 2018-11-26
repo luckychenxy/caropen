@@ -1,0 +1,81 @@
+/* pages/examining-report-old/examining-report-old.wxss */
+page{
+  padding-bottom: 0;
+}
+.examining-container{
+  padding: 4rpx;
+  background: #62AC0D;
+}
+.trigon-l-t,.trigon-r-t{
+  border-color: transparent #62AC0D;
+}
+.trigon-l-b,.trigon-r-b{
+  border-color: #62AC0D transparent;
+}
+.report-project{
+  border-top: 2rpx solid #A0A0A0;
+  border-bottom: 2rpx solid #A0A0A0;
+  padding: 15rpx 0;
+}
+.report-project-h1{
+  font-size: 30rpx;
+  letter-spacing: 1.4rpx;
+  margin-bottom: 29rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.report-project-box{
+  font-size: 28rpx;
+  letter-spacing: 1.31rpx;
+  margin-bottom: 40rpx;
+}
+.report-project-box:last-child{
+  margin-bottom: 0;
+}
+.report-project-title{
+  margin-bottom: 20rpx;
+  font-weight: bold;
+}
+.report-project-item{
+  margin-bottom: 6rpx;
+}
+.report-problem{
+  padding-top: 28rpx;
+}
+.report-problem-item{
+  position: relative;
+  font-size: 28rpx;
+  letter-spacing: 1.31rpx;
+  line-height: 40rpx;
+  margin-bottom: 23rpx;
+}
+.rp-state{
+  position: absolute;
+  right: 0;top: 0;
+}
+.rp-success{
+  color: #62AC0D;
+}
+.rp-warn{
+  color: #F5A623;
+}
+.rp-danger{
+  color: #EC001D;
+}
+.rp-class{
+  font-size: 24rpx;
+  color: #669999;
+  letter-spacing: 1.12rpx;
+  padding: 3.5rpx 12.5rpx;
+  display: inline-block;
+  border-radius: 20rpx;
+  background: rgba(102,153,153,.2);
+}
+.rp-img{
+  padding: 4rpx 0;
+}
+.rp-img image{
+  width: 122rpx;
+  height: 112rpx;
+  margin-right: 15rpx;
+}

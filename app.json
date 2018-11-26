@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/register/register",
+    "pages/state-page/state-page",
+    
+    "pages/orderDetails/orderDetails",
+    "pages/maintrecord/maintrecord",
+    "pages/lookevaluate/lookevaluate",
+    
+    "pages/examining-report-new/examining-report-new",
+    "pages/examining-report-old/examining-report-old",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/discount/discount"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "用车助手",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout":{
+    "request":7000
+  }
+}

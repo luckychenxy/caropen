@@ -1,0 +1,88 @@
+<view>
+  <view class='gpContainer'>
+    <view class='part'>
+      <view class='personal-info'>送修人：{{alldata.cars.send_name}}</view>
+      <view class='personal-info'>进厂里程：{{alldata.cars.repair_mileage}}</view>
+      <view class='personal-info'>油量：{{alldata.cars.gas}}</view>
+    </view>
+    <view class='part fault'>
+      <view class='part-title'>故障描述<text>（{{alldata.description.count}}）</text></view>
+      <view class='part-ul'>
+        <view class='part-li' wx:for="{{description}}" wx:key="info">
+          {{index+1}}、{{item.info}}
+        </view>
+      </view>
+    </view>
+    <view class='part'>
+      <view class='part-title'>外观描述<text>（异常{{alldata.appearance.count}}）</text></view>
+      <view class='part-show-list'>
+        <view class="part-show-item" wx:for="{{appearance}}" wx:key="item.Direction">
+          <image src='../../../img/{{item.state ? "bm" : "top"}}.png' data-list='appearance' data-id='{{index}}' class="show-state" bindtap='kindToggle'></image>
+          <view class='part-show-title'>{{item.Direction}}<text>（{{item.Direction_sum}}）</text></view>
+          <view class='part-show-box {{item.state ? "" : "active"}}'>
+            <view class='show-label'>
+              <text wx:for="{{item.arr}}" wx:for-item="label" wx:key="label">{{label}}</text>
+            </view>
+            <view class='part-show-picBox' wx-if="{{item.images.length>0}}">
+              <image src='{{pic}}' wx:for="{{item.images}}" wx:for-item="pic" wx:key="pic" bindtap='lookPic' data-src='{{pic}}'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='part'>
+      <view class='part-title'>轮胎信息<text>（异常{{alldata.tyre_check.count}}）</text></view>
+      <view class='part-show-list'>
+        <view class="part-show-item" wx:for="{{tyre_check}}" wx:key="item.state">
+          <image src='../../../img/{{item.state ? "bm" : "top"}}.png' data-list='tyre_check' data-id='{{index}}' class="show-state" bindtap='kindToggle'></image>
+          <view class='part-show-title'>{{item.Direction}}<text>（{{item.Direction_sum}}）</text></view>
+          <view class='part-show-box {{item.state ? "" : "active"}}'>
+            <view class='show-label'>
+              <text wx:for="{{item.arr}}" wx:for-item="label" wx:key="label">{{label}}</text>
+            </view>
+            <view class='part-show-picBox' wx-if="{{item.images.length>0}}">
+              <image src='{{pic}}' wx:for="{{item.images}}" wx:for-item="pic" wx:key="pic" bindtap='lookPic' data-src='{{pic}}'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='part'>
+      <view class='part-title'>内饰检查<text>（异常{{alldata.interior_check.count}}）</text></view>
+      <view class='part-show-list'>
+        <view class="part-show-item" wx:for="{{interior_check}}" wx:key="item.Direction">
+          <image src='../../../img/{{item.state ? "bm" : "top"}}.png' data-list='interior_check' data-id='{{index}}' class="show-state" bindtap='kindToggle'></image>
+          <view class='part-show-title'>{{item.Direction}}<text>（{{item.Direction_sum}}）</text></view>
+          <view class='part-show-box {{item.state ? "" : "active"}}'>
+            <view class='show-label'>
+              <text wx:for="{{item.arr}}" wx:for-item="label" wx:key="label">{{label}}</text>
+            </view>
+            <view class='part-show-picBox' wx-if="{{item.images.length>0}}">
+              <image src='{{pic}}' wx:for="{{item.images}}" wx:for-item="pic" wx:key="pic" bindtap='lookPic' data-src='{{pic}}'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='part'>
+      <view class='part-title'>随车装备</view>
+      <view class='part-list'>
+        <view class='part-item' wx:for="{{alldata.goods.name}}" wx:key="item">
+          <text>{{item}}</text>
+          <icon type='success' size='14'/>
+        </view>
+      </view>
+      <view class='part-note'>备注：{{alldata.goods.goods_remark}}</view>
+    </view>
+    <view class='part'>
+      <view class='part-title'>功能检查<text>（异常{{alldata.functions.data.length}}）</text></view>
+      <view class='part-list'>
+        <view class='part-item' wx:for="{{alldata.functions.data}}" wx:key="item.name">
+          <text>{{item.name}}</text>
+          <icon type='warn' size='14' color='#EC001D'/>
+        </view>
+      </view>
+      <view class='part-note'>备注：{{alldata.functions.functions_remark}}</view>
+    </view>
+  </view>
+</view>

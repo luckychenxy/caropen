@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="contain">
+ <view class="carOpenimg"></view>
+ <view class='carOpen'>用车助手欢迎您</view>
+ <view class='factoryState'>实时提供在厂车辆状态</view>
+ <view hidden='{{phoneshow}}'>
+    <view class='authorCar'>请授权后放心使用用车助手，您的信息和数据将受到用车助手的保护</view>
+    <button  open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo"
+    class='carOpenbtn'>微信授权登录</button>
+    <!-- <button  open-type="getPhoneNumber" lang="zh_CN" bindgetuserinfo="bindGetUserInfo"
+    bindgetphonenumber="getPhoneNumber" class='carOpenbtn' disabled='{{!checked}}'>微信授权登录</button> -->
+    <view class='carOpenYes'>
+    <checkbox value="同意《用车助手服务协议》" checked='{{checked}}' bindtap='checkeds'/>同意《用车助手服务协议》
+    </view>
+ </view>
+ <view hidden='{{!phoneshow}}'>
+      <view class='phoneNumber'>
+      <input placeholder='输入手机号' bindinput="phoneInput" class='input'/>
+      <view class='getyzm' bindtap="bindButtonTap" disabled='{{isClick}}' style="background-color:{{color}}">{{yzmtext}}</view>
+    </view>
+    <view class='phoneNumber'>
+      <input placeholder='输入验证码' bindinput='yzmInput'/>
+    </view>
+    <view class='yzmerror' hidden="{{yzmerror}}">*验证码错误</view>
+
+      <button class='goBack' bindtap='goback' wx-if="{{!loginBtn}}">返回</button>
+      <button class='goOn {{!loginBtn?"":"active"}}' bindtap='register'>登录</button>
+ </view>
+
+</view>
+<!--隐藏区域  黑色阴影-->
+

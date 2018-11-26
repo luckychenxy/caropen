@@ -1,0 +1,16 @@
+<view wx-if="{{show}}" class="xyy-contain">
+  <view>
+    <image src='http://phpo9mptf.bkt.clouddn.com/login.png'></image>
+  </view>
+  <view class="xyy-content">
+    <view class="xyy-content1">
+      <view>全国维修门店,</view>
+      <view>万场优惠活动。</view>
+    </view>
+    <view class="xyy-content2">
+      <view>全国近万家汽车维修门店,</view>
+      <view>集合所有门店优惠活动。</view>
+    </view>
+    <view class="xyy-content3">好事不容错过，等你来抢。</view>
+  </view>
+</view>

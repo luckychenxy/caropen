@@ -1,0 +1,90 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.2",
+	"appid": "wx2a25f53fb8fc5ccc",
+	"projectname": "%E7%94%A8%E8%BD%A6%E5%8A%A9%E6%89%8B",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": 0,
+					"name": "market111",
+					"pathName": "pages/login/login",
+					"query": "market_id=1"
+				},
+				{
+					"id": 1,
+					"name": "market_id=4",
+					"pathName": "pages/login/login",
+					"query": "market_id=4",
+					"scene": "1007"
+				},
+				{
+					"id": 2,
+					"name": "market_id=103",
+					"pathName": "pages/login/login",
+					"query": "market_id=103",
+					"scene": "1007"
+				},
+				{
+					"id": 3,
+					"name": "market_id=28",
+					"pathName": "pages/login/login",
+					"query": "market_id=28",
+					"scene": "1007"
+				},
+				{
+					"id": 4,
+					"name": "market_id=26",
+					"pathName": "pages/login/login",
+					"query": "market_id=26",
+					"scene": "1007"
+				},
+				{
+					"id": 5,
+					"name": "market_id=291",
+					"pathName": "pages/login/login",
+					"query": "market_id=291",
+					"scene": "1001"
+				},
+				{
+					"id": 6,
+					"name": "market_id=undefined",
+					"pathName": "pages/login/login",
+					"query": "market_id=undefined",
+					"scene": "1007"
+				}
+			]
+		}
+	}
+}

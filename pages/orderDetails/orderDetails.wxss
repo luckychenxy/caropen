@@ -1,0 +1,85 @@
+/* pages/orderDetails/orderDetails.wxss */
+.report-problem-item{
+  position: relative;
+  font-size: 28rpx;
+  letter-spacing: 1.31rpx;
+  line-height: 40rpx;
+  margin-bottom: 23rpx;
+  color: #4a4a4a;
+}
+.report-project-h1{
+  font-size: 28rpx;
+  letter-spacing: 1.31rpx;
+  line-height: 40rpx;
+  margin-bottom: 28rpx;
+  color: #4a4a4a;
+  text-align: center;
+}
+.report-project-h1 text{
+  font-weight: bold;
+}
+.report-project-h1 .green{
+  color: #62AC0D;
+}
+.rp-state{
+  position: absolute;
+  right: 0;top: 0;
+}
+.rp-success{
+  color: #62AC0D;
+}
+.rp-warn{
+  color: #F5A623;
+}
+.rp-danger{
+  color: #EC001D;
+}
+.rp-class{
+  font-size: 24rpx;
+  color: #669999;
+  letter-spacing: 1.12rpx;
+  padding: 3.5rpx 12.5rpx;
+  display: inline-block;
+  border-radius: 20rpx;
+  background: rgba(102,153,153,.2);
+}
+.rp-img{
+  padding: 4rpx 0;
+}
+.rp-img image{
+  width: 122rpx;
+  height: 112rpx;
+  margin-right: 15rpx;
+}
+.report-problem-yes{
+  border-bottom: 2rpx solid #e4e4e4;margin-bottom: 20rpx;
+}
+.keep{
+  padding:0 20rpx;
+  margin-bottom: 20rpx;
+}
+.keepTitle{
+  font-size: 30rpx;
+  color: #43496A;
+  letter-spacing: 1.4rpx;
+  font-weight: bold;
+  line-height: 86rpx;
+  border-bottom: 2rpx solid #E4E4E4;
+}
+.keepBox{
+  padding: 23rpx 0;
+}
+.keepBox view{
+  font-size: 26rpx;
+  color: #43496A;
+  letter-spacing: 1.21rpx;
+}
+.keepBox view:first-child{
+  margin-bottom: 13rpx;
+}
+official-account{
+  position:fixed;
+  bottom:0;
+  width:94%;
+  left:3%;
+}

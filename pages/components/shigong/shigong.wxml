@@ -1,0 +1,50 @@
+<!--pages/components/shigong/shigong.wxml-->
+<view>
+  <view class='gpContainer'>
+    <view class='sg-price'>
+      <view class='sg-title'>应付总额：<text class='danger'>¥{{allTotal}}</text></view>
+      <view class='sg-box'>
+        <view class='sg-type'>
+          <image src='../../../img/sg_trigon.png'></image>
+          <text>维修项目</text>
+          <view>合计：¥{{repairPro.price}}</view>
+        </view>
+        <view class='sg-type-list'>
+          <view class='sg-item' wx:for="{{repairPro.data}}" wx:key="item.parts_name">
+            <view>{{item.subject_name}}<text class='{{item.status=="施工中"?"hong":"huang"}}'>{{item.status}}</text></view>
+            <view>*{{item.hour}}h</view>
+            <view>¥{{item.total}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='sg-box'>
+        <view class='sg-type'>
+          <image src='../../../img/sg_trigon.png'></image>
+          <text>维修配件</text>
+          <view>合计：¥{{repairPart.price}}</view>
+        </view>
+        <view class='sg-type-list'>
+          <view class='sg-item' wx:for="{{repairPart.data}}" wx:key="item.parts_name">
+            <view>{{item.parts_name}}</view>
+            <view>*{{item.count}}h</view>
+            <view>¥{{item.p_total}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='sg-box'>
+        <view class='sg-type'>
+          <image src='../../../img/sg_trigon.png'></image>
+          <text>其他项目</text>
+          <view>合计：¥{{otherPro.price}}</view>
+        </view>
+        <view class='sg-type-list'>
+          <view class='sg-item' wx:for="{{otherPro.data}}" wx:key="item.parts_name">
+            <view>{{item.parts_name}}</view>
+            <view>*{{item.count}}h</view>
+            <view>¥{{item.p_total}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

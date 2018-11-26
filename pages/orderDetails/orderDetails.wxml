@@ -1,0 +1,39 @@
+<!--pages/orderDetails/orderDetails.wxml-->
+<view class='gpContainer'>
+  <view class='part'>
+    <view class='report-problem'>
+      <view class='report-project-h1'>本次共修复<text class='green'>{{unsolved.length+resolved.length}}</text>项，还有<text class=''>{{unsolved.length}}项未</text>解决</view>
+      <view class='report-problem-yes'>
+        <view class='report-problem-item' wx:for="{{resolved}}" wx:key="{{item.name}}">
+          <view class='rp-text'>{{index+1}}、{{item.name}} <view class='rp-class'>{{item.type}}</view></view>
+          <view class='rp-state rp-success'>已解决</view>
+          <view class='rp-img' wx:if="{{item.img>0}}">
+            <image src='{{pic}}' wx:for="{{item.img}}" wx:for-item="pic" wx:key="pic"></image>
+          </view>
+        </view>
+      </view>
+      <view class='report-problem-no'>
+        <view class='report-problem-item' wx:for="{{unsolved}}" wx:key="{{item.name}}">
+          <view class='rp-text'>{{index+1}}、{{item.name}} <view class='rp-class'>{{item.type}}</view></view>
+          <view class='rp-state rp-danger'>{{item.statue}}</view>
+          <view class='rp-img' wx:if="{{item.img>0}}">
+            <image src='{{pic}}' wx:for="{{item.img}}" wx:for-item="pic" wx:key="pic"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='part keep'>
+    <view class='keepTitle'>质保方案：小修保养</view>
+    <view class='keepBox'>
+      <view>质保期:100天</view>
+      <view>质保里程：100000KM</view>
+    </view>
+  </view>
+  <view class='part'>
+    <view class='personal-info'>工单号：{{companyInfo.ordercode}}</view>
+    <view class='personal-info'>开单时间：{{companyInfo.create_time}}</view>
+    <view class='personal-info'>维修门店：{{companyInfo.company}}</view>
+  </view>
+   <official-account></official-account>
+</view>

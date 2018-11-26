@@ -1,0 +1,102 @@
+/* pages/maintrecord/maintrecord.wxss */
+.container{
+  padding:0rpx;
+  margin: auto;
+  text-align: center;
+  background: #F3F5FA;
+}
+.height{
+  height: 100vh;
+}
+.maintbox{
+  border-radius: 10rpx;
+  background: #fff;
+  width: 95%;
+  margin-top: 20rpx;
+}
+.maintheader{
+  height:113rpx;
+  line-height: 113rpx;
+  position: relative;
+}
+.factoryImage{
+  width: 73rpx;
+  height: 73rpx;
+    position: absolute;
+    top:50%;
+    left:3%;
+    -webkit-transform:translate(0%,-50%);
+    transform:translate(0%,-50%);
+}
+.lookFactory{
+  font-size: 15px;
+  color: #858488;
+  margin-left: 100rpx;
+}
+.infactory,.inmoney,.insuccess,.inmoitor,.inwork,.incomplete{
+     position: absolute;
+    top:50%;
+    right:3%;
+    -webkit-transform:translate(0%,-50%);
+    transform:translate(0%,-50%);
+    font-size: 15px;
+}
+/* 已进厂 */
+.infactory{
+  color:#5045E8;
+}
+/* 已检测  */
+.inmoitor{
+  color: #566A82;
+}
+ /* 施工中   */
+.inwork{
+  color:#FF911E;
+}
+/* 已完工    */
+.incomplete{
+color: #485D78;
+}
+/* 已付款   */
+.inmoney{
+  color: #62AC0D;
+}
+/* 已完成 */
+.insuccess{
+  color: #6BA2E8;
+}
+.maintfooter{
+  font-size: 14px;
+  text-align: left;
+  padding:0px 18rpx;
+}
+.maintfooter::before{
+content: "";
+display: block;
+height: 3rpx;
+background: #E4E4E4;
+margin-bottom: 20rpx;
+}
+.maintfooter view{
+  margin-bottom: 20rpx;
+  color: #161616;
+  position: relative;
+}
+.danger{
+  color:#F0374E;
+}
+.evaluate{
+  width: 143rpx;
+  height: 49rpx;
+  float: right;
+  text-align: center;
+  color: #fff !important;
+  line-height: 49rpx;
+  font-size: 12px;
+  border-radius: 25rpx;
+  background-image: linear-gradient(-135deg,  #6F85FF 4%, #A8BBFF 100%);
+  box-shadow: 0 0 17px 0 #A9B6FC;
+  position: absolute;
+  right: 3%;
+  bottom: 3%;
+}

@@ -1,0 +1,243 @@
+page{
+   background: #F2F3F7;
+   padding-bottom: 40rpx;
+}
+.gpContainer{
+  background: #F3F5FA;
+  padding: 0 3%;
+  padding-top: 20rpx;
+  position: relative;
+}
+.part{
+  background: #fff;
+  padding: 20rpx 20rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+.part-title{
+  font-size: 30rpx;
+  color: #43496A;
+  letter-spacing: 1.4rpx;
+  border-bottom: 1rpx solid #E4E4E4;
+  text-align: center;
+  padding-bottom: 10rpx;
+}
+.part-title text{
+  color:#EC001D;
+}
+.danger{
+  color:#EC001D;
+}
+.trigon{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.trigon-l-t{
+  border-width: 0 0 60rpx 60rpx;
+  left: 0;top: 0;
+}
+.trigon-l-b{
+  left: 0;bottom: 0;
+  border-width: 0 60rpx 60rpx 0;
+}
+.trigon-r-t{
+  right: 0;top: 0;
+  border-width: 0 60rpx 60rpx 0;
+}
+.trigon-r-b{
+  right: 0;bottom: 0;
+  border-width: 0 0 60rpx 60rpx;
+}
+/*  */
+.personal-info{
+  font-size: 24rpx;
+  color: #858488;
+  letter-spacing: 1.12rpx;
+  margin-bottom: 20rpx;
+}
+.fault .part-ul{
+  padding: 20rpx 0 8rpx 0;
+}
+.personal-info:last-child{
+  margin-bottom: 0;
+}
+.part-li{
+  font-size: 28rpx;
+  color: #4A4A4A;
+  letter-spacing: 1.31rpx;
+  margin-bottom: 15rpx;
+}
+.part-li:last-child{
+  margin-bottom: 0;
+}
+/* 报告公共样式 */
+.examining-report{
+  background: #fff;
+  font-size: 28rpx;
+  color: #161616;
+  letter-spacing: 1.31rpx;
+  position: relative;
+}
+.examining-report-box{
+  padding: 56rpx 14rpx 74rpx 14rpx;
+  background: url('http://phpo9mptf.bkt.clouddn.com/jianche_bg.png') repeat center;
+  background-size: 100%;
+}
+.examining-report .orderNum{
+  font-size: 22rpx;
+  letter-spacing: 1.03rpx;
+  line-height: 29rpx;
+  margin-bottom: 6rpx;
+}
+.examining-report .report-head-h1{
+  font-size: 59rpx;
+  letter-spacing: 2.76rpx;
+  margin-bottom: 20rpx;
+}
+
+.examining-report .report-head{
+  margin-bottom:60rpx;
+  text-align: center;
+}
+.examining-report .report-car-info{
+  margin-bottom: 34rpx;
+}
+.examining-report .report-car-item{
+  line-height: 29rpx;
+  margin-bottom: 19rpx;
+}
+.report-company{
+  margin-top: 40rpx;
+}
+.report-company-item{
+  font-size: 28rpx;
+  letter-spacing: 1.31rpx;
+  line-height: 29rpx;
+  margin-bottom: 20rpx;
+}
+.report-company-item:last-child{
+  display: flex;
+}
+.report-company-item:last-child text{
+  flex: 0 0 150rpx;
+}
+/* 页面跳转的样式 */
+
+.router{
+  height: 150rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  display: table;
+  width: 100%;
+}
+.router image{
+  vertical-align: middle;
+}
+.router image:first-child{
+  width: 89rpx;height: 89rpx;
+  margin-right: 20rpx;
+}
+.router image:last-child{
+  width: 43rpx;height: 43rpx;
+  position: absolute;
+  right: 20rpx;top: 0;bottom: 0;
+  margin: auto;
+}
+.router text{
+  display: inline-block;
+  font-size: 30rpx;
+  color: #43496A;
+  letter-spacing: 1.4rpx;
+}
+.router .navigator-hover{
+  background: transparent;
+  opacity: 1;
+}
+.router navigator{
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 20rpx;
+  position: relative;
+}
+/* 新永样式 */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.text-right{
+  text-align: right;
+}
+.text-left{
+  text-align: left;
+}
+.fsize16{
+  font-size: 16px;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.text-bold{
+  font-weight: bold;
+}
+.triangle{
+  width: 40rpx;
+  height: 40rpx;
+  position:relative;
+  top:10rpx
+}
+.fsize15{
+  font-size: 15px;
+}
+.fsize14{
+  font-size: 14px;
+}
+.fsize13{
+  font-size: 13px;
+}
+.mb8{
+  margin-bottom: 8rpx;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.qualified,.disqualification{
+  width: 156rpx;
+  height:   118rpx;
+  position: absolute;
+  top:50%;
+  right:10%;
+  -webkit-transform:translate(0%,-50%);
+  transform:translate(0%,-50%);
+}
+.unmaint{
+  width: 230rpx;
+  height: 230rpx;
+  margin-top: 190rpx;
+}
+.maintnull{
+  font-size: 22px;
+  font-weight: bold;
+}
+.thanks{
+  color: #858488;
+  font-size: 28rpx;
+  margin-top: 8rpx;
+}
+.noData{
+  text-align: center;
+}

@@ -1,0 +1,281 @@
+.container{
+  height:100vh;
+  position: fixed;
+}
+/* .xyy-mask{
+  position: fixed;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  z-index:100;
+} */
+.xyy-mask.none{
+  display: none;
+}
+.xyy-popup{
+  position: fixed;  
+  bottom: 0;
+  top:0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width:552rpx;
+  height:500rpx;
+  top:60%;
+}
+.popup-header{
+  margin-bottom:16rpx;
+}
+.popup-header>view:first-child{
+  font-size:40rpx;
+  color:#fff;
+  letter-spacing: 0.76px;
+}
+/* .popup-header>view:last-child{
+  font-size:14px;
+  letter-spacing: 0.76px;
+  line-height: 22px;
+} */
+.left{
+  float: left;
+  font-size: 28rpx;
+  vertical-align: middle;
+  
+}
+.right{
+  font-size:28rpx;
+  margin-left:120rpx;
+}
+.right input{
+  position: relative;
+  top:4px;
+}
+.xyy-input{
+  width:516rpx;
+  line-height:60rpx;
+  border-radius: 4rpx;
+  border: 1rpx solid #979797;
+  margin-bottom: 18rpx;
+  height:60rpx;
+  padding-left: 16rpx;
+  color:#fff;
+  position: relative;
+}
+
+.xyy-submit{
+
+  margin-top:22rpx; 
+  width:534rpx;
+}
+.xyy-submit button{
+  background-color: #FFB214;
+  border-radius: 4rpx;
+  width:534rpx;
+  height:64rpx;
+  vertical-align: middle;
+  color:#000;
+  font-size: 28rpx;
+  line-height:64rpx;
+  padding:0;
+}
+.xyy-suc{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color:#fff;
+  width:552rpx; 
+  height:200rpx;
+  border-radius:16rpx;
+  
+}
+.xyy-suc-header{
+   padding-top:30rpx; 
+  text-align: center;
+  font-weight: bold;
+  font-size:34rpx;
+}
+.xyy-suc-text{
+  font-size:26rpx;
+  margin-top:40rpx;
+  text-align: center;
+}
+.banner{
+  position: fixed;
+  height:100vh;
+  width:63vh;
+  z-index:-1;
+  /* background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat; */
+}
+.banner>image{
+  width:100%;
+  height:100%;
+}
+/* .xyy-footer{
+
+
+  background-color:rgba(0,0,0,0.30);
+
+} */
+.xyy-footer-popup{
+  position: fixed;
+  font-size:30rpx;
+  bottom:0;
+  width:580rpx;
+  height:424rpx;
+  left:0;
+  right:0;
+  margin:auto;
+  background-color:#fff;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  z-index: 1000;
+  text-align: center;
+}
+.footer-tit1{
+  font-size: 32rpx;
+  color:#529DFD;
+  position: relative;
+  top:-110rpx;
+  letter-spacing: 0.76px;
+}
+.footer-tit2{
+  font-size:28rpx;
+  position: relative;
+  top:-80rpx;
+  letter-spacing: 0.76px;
+}
+.footer-pic>image{
+  width:440rpx;
+  height:358rpx;
+}
+.xyy-mask-header{
+  position: absolute;
+  top:10%;
+  width:588rpx;
+  height:100rpx;
+  background-color:#fff;
+  left:0;
+  right:0;
+  margin:0 auto;
+  border-radius: 18rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size:44rpx;
+}
+.xyy-bgMask{
+  position: fixed;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  background-color:rgba(0,0,0,0.30);
+}
+.xyy-out{
+  position: fixed;
+  font-size:30rpx;
+  bottom:0;
+  width:580rpx;
+  height:424rpx;
+  left:0;
+  right:0;
+  margin:auto;
+  background-color:#fff;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  z-index: 1000;
+  text-align: center;
+}
+.footer-tit1.guoqi{
+  color:#000;
+}
+.suc-pic{
+  position: absolute;
+  left:100rpx;
+  top:40rpx;
+}
+.suc-pic>image{
+  width:372rpx;  
+  height:160rpx; 
+}
+
+
+.yzm{
+  width:330rpx;
+}
+.xyy-yzm{
+  position: absolute;
+  top:0;
+  right:0;
+  z-index: 10;
+}
+.xyy-yzm>button{
+  height:60rpx;
+  line-height:60rpx;
+  width:170rpx;
+  padding: 0 10rpx;
+  font-size:28rpx;
+  background-color:#FFB214;
+  color:#000;
+  border-radius: 0;
+}
+.content{
+  position: relative;
+  top:86rpx;
+  left:120rpx;
+  color:#fff;
+  font-size:24rpx
+}
+.content-banner{
+  position: relative;
+  left:-40rpx;
+}
+.content-banner>image{
+  width:546rpx;
+  height:200rpx;
+}
+.xyy-content1,.xyy-content2{
+  position: absolute;
+  font-size:80rpx;
+  left:80rpx;
+}
+.xyy-content1{
+  top:20rpx;
+
+}
+.xyy-content2{
+  top:110rpx;
+}
+.xyy-detail{
+  font-size: 28rpx;
+  width:487rpx;
+  text-align: justify;
+  line-height: 45rpx;
+}
+/* .xyy-date{
+  margin-top:46rpx;
+} */
+.xyy-date,.xyy-phone,.xyy-address{
+  line-height:40rpx;
+}
+.xyy-juan-pic{
+  position: absolute;
+  top:-66rpx;
+  left:-98rpx;
+}
+.xyy-juan-pic>image{  
+  width:38px;
+  height:38px;
+  border-radius: 50%;
+}
+.xyy-juan-name{
+  position: relative;
+  font-size:28rpx;
+  top:-48rpx;
+  left:10rpx;
+}
